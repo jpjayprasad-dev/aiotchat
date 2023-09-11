@@ -10,7 +10,7 @@ from controllers import sensor_controller, device_controller, general_logger
 sc = sensor_controller.SensorController(os.getenv('PORTAL_HOST'))
 dc = device_controller.DeviceController(os.getenv('PORTAL_HOST'))
 gl = general_logger.GeneralLogger(os.getenv('ES_HOST'))
-openai.api_key = open("open_ai_key.txt", "r").read().strip("\n")
+openai.api_key = os.getenv('OPENAI_KEY') if os.getenv('OPENAI_KEY') else open("open_ai_key.txt", "r").read().strip("\n")
 
 message_history = [{"role": "user", "content": f"You are a room assistant. I will specify the hotel name, room number, name of the room sensor which i want to read data, name of the device which i want to send controls in my messages and you will reply with a function call. If i specify timespan in days then convert it to hours. If you understand, say OK."},
                    {"role": "assistant", "content": f"OK"}
