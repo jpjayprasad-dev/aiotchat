@@ -146,5 +146,5 @@ with gr.Blocks() as demo:
     The _js parameter is used to pass a JavaScript function to the submit method.'''
     txt.submit(None, None, txt, _js="() => {''}") # No function, no input to that function, submit action to textbox is a js function that returns empty string, so it clears immediately.
          
-demo.launch()
+demo.launch(server_name="0.0.0.0")
 

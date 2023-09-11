@@ -1,0 +1,6 @@
+openai==0.28.0
+gradio==3.43.2
+gradio_client==0.5.0
+pandas==1.5.3
+elasticsearch==8.9.0
+requests==2.31.0
